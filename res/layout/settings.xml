@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/bg"
+  >
+
+ <Button 
+ 	android:id="@+id/aboutnfc_btn" 
+ 	android:text="About NFC" 
+ 	android:layout_width="350px" 
+ 	android:layout_height="wrap_content" 
+ 	android:layout_marginTop="65px" 
+ 	android:layout_marginLeft="65px"
+ 	android:textSize="18px"
+ 	android:padding="0px"
+ 	android:background="@drawable/menutop_btn"
+ 	>
+</Button>
+
+<Button 
+ 	android:id="@+id/feedback_btn" 
+ 	android:text="Feedback" 
+ 	android:layout_width="350px" 
+ 	android:layout_height="60px" 
+ 	android:layout_below="@+id/aboutnfc_btn" 
+ 	android:layout_alignLeft="@+id/aboutnfc_btn"
+ 	android:layout_marginTop="2px"
+ 	android:textSize="18px"
+ 	android:padding="0px"
+ 	android:background="#FFFFFF"
+ 	>
+</Button>
+
+<Button 
+ 	android:id="@+id/legal_btn" 
+ 	android:text="Legal" 
+ 	android:layout_width="350px" 
+ 	android:layout_height="wrap_content" 
+ 	android:layout_below="@+id/feedback_btn" 
+ 	android:layout_alignLeft="@+id/feedback_btn"
+ 	android:layout_marginTop="2px"
+ 	android:textSize="18px"
+ 	android:padding="0px"
+ 	android:background="@drawable/menubottom_btn"
+ 	>
+</Button>
+
+<TextView
+   	android:id="@+id/versionText" 
+    android:text="Version 0.1.01"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:layout_below="@+id/legal_btn"
+	android:layout_marginTop="30px" 
+	android:layout_centerHorizontal="true"
+	android:textSize="15px"
+	android:textColor="#ffffff"    
+    />
+
+<ImageView
+	android:layout_width="102px" 
+	android:layout_height="28px"
+	android:layout_below="@+id/versionText"
+	android:layout_marginTop="10px" 
+	android:layout_centerHorizontal="true"
+	android:background="@drawable/tappemlogosmall" 
+    />
+
+</RelativeLayout>
+

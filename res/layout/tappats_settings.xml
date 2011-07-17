@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    >
+    
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/logobar"
+		android:layout_width="fill_parent"
+		android:layout_height="60px"
+		android:layout_alignParentTop="true"
+		android:background="@drawable/logo_background"
+		>
+		
+		<ImageView
+		android:layout_width="136px"
+		android:layout_height="38px"
+		android:layout_centerInParent="true"
+		android:background="@drawable/tappats_logo"
+		>
+		</ImageView>
+		
+		<ImageView
+		android:layout_width="fill_parent"
+		android:layout_height="1px"
+		android:layout_alignParentBottom="true"
+		android:background="#000000"
+		>
+		</ImageView>
+		
+	</RelativeLayout>	
+    
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/home_title_bar"
+		android:layout_width="match_parent"
+		android:layout_height="44px"
+		android:layout_below="@+id/logobar"
+		android:background="@drawable/greybg_dark"
+		>
+	
+		<TextView
+		    android:id="@+id/SettingsTitle" 
+		    android:text="Settings"
+			android:layout_width="wrap_content" 
+			android:layout_height="fill_parent"
+			android:layout_marginLeft="18px"
+			android:gravity="center_vertical"
+			android:textSize="24px"
+			android:textStyle="bold"
+			android:textColor="#ffffff"    
+		    />
+	</RelativeLayout>
+	
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/VersionTitleHolder"
+		android:layout_width="match_parent"
+		android:layout_height="44px"
+		android:layout_below="@+id/home_title_bar"
+		android:background="@drawable/greybg_light"
+		>
+	
+		<TextView
+		    android:id="@+id/VersionTitle" 
+		    android:text="Version"
+			android:layout_width="wrap_content" 
+			android:layout_height="fill_parent"
+			android:layout_marginLeft="18px"
+			android:gravity="center_vertical"
+			android:textSize="24px"
+			android:textStyle="bold"
+			android:textColor="#000000"    
+		    />			
+	</RelativeLayout>
+    		
+    <TextView
+		    android:id="@+id/VersionNumber" 
+		    android:text="Version 0.1"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			android:minHeight="88px"
+			android:paddingLeft="18px"
+			android:paddingRight="18px"
+			android:layout_below="@+id/VersionTitleHolder"
+			android:gravity="center_vertical"
+			android:textSize="24px"
+			android:textStyle="normal"
+			android:textColor="#000000"
+			android:background="#f0f0f0"    
+		  	/>
+	<ImageView 
+		android:id="@+id/listbottomline" 
+		android:layout_width="fill_parent"
+		android:layout_height="1px"
+		android:background="#999999"
+		android:layout_below="@+id/VersionNumber"
+		>
+		</ImageView> 
+
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/InformationTitleHolder"
+		android:layout_width="match_parent"
+		android:layout_height="44px"
+		android:layout_below="@+id/listbottomline"
+		android:background="@drawable/greybg_light"
+		>
+	
+		<TextView
+		    android:id="@+id/InformationTitle" 
+		    android:text="Information"
+			android:layout_width="wrap_content" 
+			android:layout_height="fill_parent"
+			android:layout_marginLeft="18px"
+			android:gravity="center_vertical"
+			android:textSize="24px"
+			android:textStyle="bold"
+			android:textColor="#000000"    
+		    />			
+	</RelativeLayout>
+    		
+    <Button
+		    android:id="@+id/urlTappem" 
+		    android:text="www.tappem.com"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			android:minHeight="88px"
+
+			android:paddingRight="18px"
+			android:paddingLeft="18px"
+			android:layout_below="@+id/InformationTitleHolder"
+			android:gravity="center_vertical"
+			android:textSize="24px"
+			android:textStyle="normal"
+			android:textColor="#000000"
+			android:background="@drawable/list_item_background"    
+		  	/>
+		  	
+	<ImageView 
+		android:id="@+id/listbottomline2" 
+		android:layout_width="fill_parent"
+		android:layout_height="1px"
+		android:background="#999999"
+		android:layout_below="@+id/urlTappem"
+		>
+		</ImageView> 
+
+<!-- 	<RelativeLayout -->
+<!-- 		xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!-- 		android:id="@+id/FeedbackTitleHolder" -->
+<!-- 		android:layout_width="match_parent" -->
+<!-- 		android:layout_height="44px" -->
+<!-- 		android:layout_below="@+id/listbottomline2" -->
+<!-- 		android:background="@drawable/greybg_light" -->
+<!-- 		> -->
+	
+<!-- 		<TextView -->
+<!-- 		    android:id="@+id/FeedbackTitle"  -->
+<!-- 		    android:text="Feedback" -->
+<!-- 			android:layout_width="wrap_content"  -->
+<!-- 			android:layout_height="fill_parent" -->
+<!-- 			android:layout_marginLeft="18px" -->
+<!-- 			android:gravity="center_vertical" -->
+<!-- 			android:textSize="24px" -->
+<!-- 			android:textStyle="bold" -->
+<!-- 			android:textColor="#000000"     -->
+<!-- 		    />			 -->
+<!-- 	</RelativeLayout> -->
+
+	<ProgressBar android:id="@+id/pb"
+        android:layout_width="40px" 
+        android:layout_height="40px"
+        android:indeterminate="true" 
+        android:indeterminateOnly="true"
+        android:isScrollContainer="true" 
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10px"
+		android:layout_marginRight="18px"
+        android:soundEffectsEnabled="false"
+        />
+        
+ 
+	<LinearLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:id="@+id/navbarholder"
+	  android:orientation="vertical"
+	  android:layout_width="fill_parent"
+	  android:layout_height="80px"
+	  android:layout_alignParentBottom="true"
+	  android:background="@drawable/greybg_dark"
+	  >
+	
+		<LinearLayout
+			android:id="@+id/navbar_holder"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="18px"
+			android:layout_marginTop="4px"
+			>
+			
+			    <Button 
+				    android:id="@+id/navbar_home" 
+				    android:text="Home"
+				    android:paddingTop="42px"
+				    android:layout_width="111px" 
+				    android:layout_height="72px"
+				    android:background="@drawable/navbar_home_background"
+				    android:textSize="14px"
+					android:textStyle="bold"
+					android:textColor="#ffffff" 
+			    	>
+			    </Button>
+			    
+			    <Button 
+				    android:id="@+id/navbar_current" 
+				    android:text="Current"
+				    android:paddingTop="42px"
+				    android:layout_width="111px" 
+				    android:layout_height="72px"
+				    android:background="@drawable/navbar_current_background"
+				    android:textSize="14px"
+					android:textStyle="bold"
+					android:textColor="#ffffff" 
+			    	>
+			    </Button>
+			
+			    <Button 
+				    android:id="@+id/navbar_favorites" 
+				    android:text="Favorites"
+				    android:paddingTop="42px"
+				    android:layout_width="111px" 
+				    android:layout_height="72px"
+				    android:background="@drawable/navbar_favorite_background"
+				    android:textSize="14px"
+					android:textStyle="bold"
+					android:textColor="#ffffff" 
+			    	>
+			    </Button>
+			    
+			        <Button 
+				    android:id="@+id/navbar_settings" 
+				    android:text="Settings"
+				    android:paddingTop="42px"
+				    android:layout_width="111px" 
+				    android:layout_height="72px"
+				    android:background="@drawable/navbar_settings_background"
+				    android:textSize="14px"
+					android:textStyle="bold"
+					android:textColor="#ffffff"
+			    	>
+			    </Button>    
+	
+		</LinearLayout>
+
+	</LinearLayout>
+
+</RelativeLayout>

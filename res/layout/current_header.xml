@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="194px"
+  android:background="@drawable/headerbg_current"
+  >
+
+	<RelativeLayout
+		android:id="@+id/stop_buttonholder"
+		android:layout_width="444px"
+		android:layout_height="60px"
+		android:layout_marginLeft="18px"
+		android:layout_marginTop="10px"
+		>
+		
+		<TextView
+		   	android:id="@+id/stopname"
+		   	android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:maxWidth="340px"
+			android:layout_centerVertical="true"
+			android:text="Palo Alto Transit Center"
+			android:textSize="17px"
+			android:textStyle="bold"
+			android:textColor="#000000"
+		>
+		
+		</TextView>
+	
+	    	<RelativeLayout
+	    		    android:id="@+id/favoriteholder"
+	    		    android:layout_width="30px"
+					android:layout_height="fill_parent"
+					android:layout_marginLeft="15px"
+					android:layout_toRightOf="@+id/stopname"
+					>
+					
+			    	<Button
+			    		android:layout_width="30px"
+						android:layout_height="30px"
+						android:background="@drawable/star_notfavorite"
+						android:layout_centerVertical="true"
+						android:layout_alignParentRight="true"
+			    		>
+			    	
+			    	</Button>
+	    	
+	    	</RelativeLayout>
+	    	
+	
+	    	<RelativeLayout
+	    		    android:id="@+id/refreshholder"
+	    		    android:layout_width="30px"
+					android:layout_height="fill_parent"
+					android:layout_marginLeft="15px"
+					android:layout_alignParentRight="true"
+					>
+					
+			    	<Button
+			    		android:layout_width="30px"
+						android:layout_height="30px"
+						android:background="@drawable/refresh"
+						android:layout_centerVertical="true"
+						android:layout_alignParentRight="true"
+			    		>
+			    	
+			    	</Button>
+	    	
+	    	</RelativeLayout>
+	
+		
+	
+	</RelativeLayout>
+
+	<ImageView
+			android:layout_width="444px"
+			android:layout_height="110px"
+			android:layout_below="@+id/stop_buttonholder"
+			android:layout_marginLeft="18px"
+			android:background="#000000"
+			>
+		
+	</ImageView>
+
+  
+</RelativeLayout>

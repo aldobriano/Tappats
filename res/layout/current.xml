@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    >
+    
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/logobar"
+		android:layout_width="wrap_content"
+		android:layout_height="60px"
+		android:layout_alignParentTop="true"
+		android:background="@drawable/logobar"
+		>
+	</LinearLayout>
+
+	<RelativeLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:id="@+id/current_header"
+	  android:layout_width="match_parent"
+	  android:layout_height="194px"
+	  android:layout_below="@+id/logobar"
+	  android:background="@drawable/headerbg_current"
+	  >
+	  </RelativeLayout>
+	
+</RelativeLayout>

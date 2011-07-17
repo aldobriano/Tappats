@@ -1,0 +1,15 @@
+
+Serra Mall - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=1
+Serra Mall @ Main Quad - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=2
+Serra Mall @ Memorial Auditorium - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=3
+Serra Mall @ Hoover Tower - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=4
+Galvez St. @ Memorial Way - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=5
+Galvez St. @ Montag Hall - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=6
+Galvez St. @ The Alumni Center - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=7
+Galvez St.@ The Track House - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=8
+Serra St @ Burnham Pavilion - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=10
+Serra St. @ Encina Hall - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=11
+Serra St.@ Campus Dr.- http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=12
+Serra St. @ Manzanita Field - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=13
+Campus Dr. @ Serra St - http://fops-cf.stanford.edu/stanford_ivl/stopDepartures.cfm?stopid=14
+

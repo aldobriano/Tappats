@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+		android:layout_height="98px"
+		
+		>
+
+	
+	<RelativeLayout
+   		xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:id="@+id/stoplist"
+    	android:layout_width="fill_parent"
+		android:layout_height="98px"
+		
+		
+    	>
+        
+        	
+	   	
+        
+    	<TextView
+	    	android:id="@+id/f_stopname"
+	    	android:layout_width="wrap_content"
+	    	
+			android:layout_height="30px"
+			android:maxWidth="370px"
+			android:maxHeight="30px"
+			android:layout_marginTop="14px"
+			android:layout_marginLeft="18px"
+			android:text="California Street @ San Antonio Shopping Center"
+			android:textSize="24px"
+			android:textColor="#000000"
+	    	>
+    	</TextView>
+    	
+    	<ImageView
+	    	android:id="@+id/f_stopline1"
+	    	
+	    	android:layout_marginTop="10px"
+	    	android:layout_marginBottom="10px"
+	    	android:layout_below="@+id/f_stopname"
+	    	android:layout_width="67px"
+			android:layout_height="24px"
+			android:layout_marginRight="7px"
+			android:layout_marginLeft="18px"
+	    	>
+    	</ImageView>
+    	
+    	<ImageView
+	    	android:id="@+id/f_stopline2"
+	    	
+	    	android:layout_marginTop="10px"
+	    	android:layout_below="@+id/f_stopname"
+	    	android:layout_toRightOf="@+id/f_stopline1"
+	    	android:layout_width="67px"
+			android:layout_height="24px"
+			android:layout_marginRight="7px"
+			
+	    	>
+    	</ImageView>
+    	
+    	<ImageView
+	    	android:id="@+id/f_stopline3"
+	    	
+	    	android:layout_marginTop="10px"
+	    	android:layout_below="@+id/f_stopname"
+	    	android:layout_toRightOf="@+id/f_stopline2"
+	    	android:layout_width="67px"
+			android:layout_height="24px"
+			android:layout_marginRight="7px"
+			
+	    	>
+    	</ImageView>
+    	
+    	<ImageView
+	    	android:id="@+id/f_stopline4"
+	    	
+	    	android:layout_marginTop="10px"
+	    	android:layout_below="@+id/f_stopname"
+	    	android:layout_toRightOf="@+id/f_stopline3"
+	    	android:layout_width="67px"
+			android:layout_height="24px"
+			android:layout_marginRight="7px"
+			
+	    	>
+    	</ImageView>
+    	
+    	<ImageView
+	    	android:id="@+id/f_stopline5"
+	    	
+	    	android:layout_marginTop="10px"
+	    	android:layout_below="@+id/f_stopname"
+	    	android:layout_toRightOf="@+id/f_stopline4"
+	    	android:layout_width="67px"
+			android:layout_height="24px"
+			android:layout_marginRight="7px"
+			
+	    	>
+    	</ImageView>
+    
+       
+				
+	    	<ImageView
+	    		android:id="@+id/favoritestar_btn"
+	    		android:layout_width="33px"
+				android:layout_height="32px"
+				android:background="@drawable/star_favorite"
+				android:layout_centerVertical="true"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="18px"
+	    		>
+	    	
+	    	</ImageView>
+    	
+    
+   	    
+   	    <ImageView 
+		android:id="@+id/headerlineblack" 
+		android:layout_width="fill_parent"
+		android:layout_height="1px"
+		android:layout_alignParentBottom="true"
+		android:background="#000000"
+		>
+		</ImageView>    	
+    	
+    	
+    </RelativeLayout>
+
+</LinearLayout>
+
+<!-- <LinearLayout -->
+<!-- 		xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!-- 	    android:layout_width="fill_parent" -->
+<!-- 		android:layout_height="98px" -->
+<!-- 		> -->
+<!-- 	<RelativeLayout -->
+<!--    		xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!--     	android:id="@+id/buslist" -->
+<!--     	android:layout_width="fill_parent" -->
+<!-- 		android:layout_height="98px" -->
+<!-- 		android:background="#f0f0f0" -->
+<!--     	> -->
+        
+<!-- 	   	<ImageView  -->
+<!-- 		android:id="@+id/listbottomline"  -->
+<!-- 		android:layout_width="fill_parent" -->
+<!-- 		android:layout_height="2px" -->
+<!-- 		android:layout_alignParentTop="true" -->
+<!-- 		android:background="#ffffff" -->
+<!-- 		> -->
+<!-- 		</ImageView>          -->
+        
+<!-- 	    	<RelativeLayout -->
+<!-- 	    	android:id="@+id/busroute_holder" -->
+<!-- 	    	android:layout_width="100px" -->
+<!-- 			android:layout_height="98px" -->
+<!-- 			android:layout_marginLeft="18px" -->
+<!-- 	    	> -->
+<!-- 		    	<ImageView -->
+<!-- 		    	android:id="@+id/busroute_icon" -->
+<!-- 		    	android:layout_width="100px" -->
+<!-- 				android:layout_height="wrap_content" -->
+<!-- 				android:layout_centerVertical="true" -->
+<!-- 		    	android:background="@drawable/slac" -->
+<!-- 		    	> -->
+<!-- 		    	</ImageView> -->
+	    	
+<!-- 	    	</RelativeLayout> -->
+
+<!-- 			<RelativeLayout -->
+<!-- 	    	android:id="@+id/direction_holder" -->
+<!-- 	    	android:layout_width="200px" -->
+<!-- 			android:layout_height="98px" -->
+<!-- 			android:layout_toRightOf="@+id/busroute_holder" -->
+<!-- 			android:layout_marginLeft="38px" -->
+<!-- 			> -->
+			
+<!-- 		    	<TextView -->
+<!-- 				android:id="@+id/busServiceTo" -->
+<!-- 				android:text="You can emulate one through layouts, such as" -->
+<!-- 				android:layout_width="wrap_content"  -->
+<!-- 				android:layout_height="wrap_content" -->
+<!-- 				android:layout_centerVertical="true" -->
+<!-- 				android:textSize="17px" -->
+<!-- 				android:textColor="#000000"     -->
+<!-- 			    > -->
+<!-- 				</TextView> -->
+	    	
+<!-- 	    	</RelativeLayout> -->
+	    	
+<!-- 	    	<RelativeLayout -->
+<!-- 	    	android:id="@+id/busTime_holder" -->
+<!-- 	    	android:layout_width="100px" -->
+<!-- 			android:layout_height="98px" -->
+<!-- 			android:layout_alignParentRight="true" -->
+<!-- 	    	> -->
+<!-- 		    	<TextView -->
+<!-- 				android:id="@+id/busTime" -->
+<!-- 				android:layout_width="85px"  -->
+<!-- 				android:layout_height="85px" -->
+<!-- 				android:layout_centerVertical="true" -->
+<!-- 				android:gravity="center" -->
+<!-- 				android:padding="5px" -->
+<!-- 				android:text="Coming soon" -->
+<!-- 				android:textSize="17px" -->
+<!-- 				android:textStyle="bold" -->
+<!-- 				android:textColor="#000000"  -->
+<!-- 				android:background="@drawable/boxgrey"  -->
+<!-- 			    > -->
+<!-- 				</TextView> -->
+	    	
+<!-- 	    	</RelativeLayout> -->
+	    	
+<!-- 	    	<ImageView  -->
+<!-- 			android:id="@+id/headerlineblack"  -->
+<!-- 			android:layout_width="fill_parent" -->
+<!-- 			android:layout_height="1px" -->
+<!-- 			android:layout_alignParentBottom="true" -->
+<!-- 			android:background="#000000" -->
+<!-- 			> -->
+<!-- 			</ImageView> -->
+
+<!--     </RelativeLayout> -->
+<!-- </LinearLayout> -->

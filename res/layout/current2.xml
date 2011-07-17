@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    >
+    
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/logobar"
+		android:layout_width="wrap_content"
+		android:layout_height="60px"
+		android:layout_alignParentTop="true"
+		android:background="@drawable/logobar"
+		>
+	</LinearLayout>
+
+	<RelativeLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:id="@+id/current_header"
+	  android:layout_width="match_parent"
+	  android:layout_height="194px"
+	  android:layout_below="@+id/logobar"
+	  android:background="@drawable/headerbg_current"
+	  >
+	  
+	  <RelativeLayout
+		android:id="@+id/stop_buttonholder"
+		android:layout_width="444px"
+		android:layout_height="60px"
+		android:layout_marginLeft="18px"
+		android:layout_marginTop="10px"
+		>
+		
+		<TextView
+		   	android:id="@+id/stopname"
+		   	android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:maxWidth="340px"
+			android:layout_centerVertical="true"
+			android:text="Palo Alto Transit Center"
+			android:textSize="17px"
+			android:textStyle="bold"
+			android:textColor="#000000"
+		>
+	  	</TextView>
+	
+	    	<RelativeLayout
+	    		    android:id="@+id/favoriteholder"
+	    		    android:layout_width="30px"
+					android:layout_height="fill_parent"
+					android:layout_marginLeft="15px"
+					android:layout_toRightOf="@+id/stopname"
+					>
+					
+			    	<Button
+			    		android:layout_width="30px"
+						android:layout_height="30px"
+						android:background="@drawable/star_notfavorite"
+						android:layout_centerVertical="true"
+						android:layout_alignParentRight="true"
+			    		>
+			    	
+			    	</Button>
+	    	
+	    	</RelativeLayout>
+	    	
+	
+	    	<RelativeLayout
+	    		    android:id="@+id/refreshholder"
+	    		    android:layout_width="30px"
+					android:layout_height="fill_parent"
+					android:layout_marginLeft="15px"
+					android:layout_alignParentRight="true"
+					>
+					
+			    	<Button
+			    		android:layout_width="30px"
+						android:layout_height="30px"
+						android:background="@drawable/refresh"
+						android:layout_centerVertical="true"
+						android:layout_alignParentRight="true"
+			    		>
+			    	
+			    	</Button>
+	    	
+	    	</RelativeLayout>
+	  
+	  </RelativeLayout>
+	  
+	  	<ImageView
+	    	android:id="@+id/map"
+			android:layout_width="444px"
+			android:layout_height="110px"
+			android:layout_below="@+id/stop_buttonholder"
+			android:layout_marginLeft="18px"
+			android:background="@drawable/rounded_corners"
+			>
+		
+		</ImageView>
+		
+	</RelativeLayout>
+	
+	<LinearLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:id="@+id/navbarholder"
+	  android:orientation="vertical"
+	  android:layout_width="fill_parent"
+	  android:layout_height="80px"
+	  android:layout_alignParentBottom="true"
+	  android:background="@drawable/navbarbg"
+	  >
+	
+		<LinearLayout
+			android:id="@+id/navbar_holder"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="18px"
+			android:layout_marginTop="0px"
+			>
+			
+			    <Button 
+				    android:id="@+id/navbar_home" 
+				    android:text="Home"
+				    android:paddingTop="42px"
+				    android:layout_width="111px" 
+				    android:layout_height="72px"
+				    android:background="@drawable/navbar_home"
+				    android:textSize="14px"
+					android:textStyle="bold"
+					android:textColor="#ffffff" 
+			    	>
+			    </Button>
+			    
+			    <Button 
+				    android:id="@+id/navbar_current" 
+				    android:text="Current"
+				    android:paddingTop="42px"
+				    android:layout_width="111px" 
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/navbar_current"
+				    android:textSize="14px"
+					android:textStyle="bold"
+					android:textColor="#ffffff" 
+			    	>
+			    </Button>
+			
+			    <Button 
+				    android:id="@+id/navbar_favorites" 
+				    android:text="Favorites"
+				    android:paddingTop="42px"
+				    android:layout_width="111px" 
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/navbar_favorite"
+				    android:textSize="14px"
+					android:textStyle="bold"
+					android:textColor="#ffffff" 
+			    	>
+			    </Button>
+			    
+			        <Button 
+				    android:id="@+id/navbar_settings" 
+				    android:text="Settings"
+				    android:paddingTop="42px"
+				    android:layout_width="111px" 
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/navbar_settings"
+				    android:textSize="14px"
+					android:textStyle="bold"
+					android:textColor="#ffffff" 
+			    	>
+			    </Button>    
+	
+		</LinearLayout>
+
+	</LinearLayout>
+	
+		
+</RelativeLayout>

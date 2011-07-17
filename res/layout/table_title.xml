@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+ 	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="40px"
+    android:background="#FFFFFF"
+    >
+
+<ImageView 
+	android:id="@+id/headerbg" 
+	android:layout_width="fill_parent" 
+	android:layout_height="40px"
+    android:background="@drawable/tabletitle_bg"
+	>
+</ImageView>
+
+<TextView
+    android:id="@+id/columnBusRouteText" 
+    android:text="Bus line"
+	android:layout_width="100px" 
+	android:layout_height="wrap_content"
+	android:layout_marginLeft="20px"
+	android:layout_marginTop="10px"
+	android:layout_centerVertical="true"
+	android:textSize="17px"
+	android:textStyle="bold"
+	android:textColor="#ffffff"    
+    />
+    
+<TextView
+    android:id="@+id/columnDirectionText" 
+    android:text="Status"
+	android:layout_width="190px" 
+	android:layout_height="wrap_content"
+	android:layout_toRightOf="@+id/columnBusRouteText"
+	android:layout_marginLeft="20px"
+	android:layout_marginTop="10px"
+	android:layout_centerVertical="true"
+	android:textSize="17px"
+	android:textStyle="bold"
+	android:textColor="#ffffff"    
+    />
+    
+<TextView
+    android:id="@+id/columnInfoText" 
+    android:text="Mins to Wait"
+	android:layout_width="110px" 
+	android:layout_height="wrap_content"
+	android:layout_toRightOf="@+id/columnDirectionText"
+	android:layout_marginLeft="20px"
+	android:layout_marginTop="10px"
+	android:layout_centerVertical="true"
+	android:textSize="17px"
+	android:textStyle="bold"
+	android:textColor="#ffffff"    
+    />
+
+<ImageView 
+	android:id="@+id/headerlinewhite" 
+	android:layout_width="fill_parent" 
+	android:layout_height="1px"
+	android:background="#999999"
+    android:layout_y="38px"
+	>
+</ImageView>
+    
+<ImageView 
+	android:id="@+id/headerlineblack" 
+	android:layout_width="fill_parent" 
+	android:layout_height="1px"
+	android:background="#000000"
+    android:layout_y="39px"
+	>
+</ImageView>
+
+
+
+
+    
+</RelativeLayout>

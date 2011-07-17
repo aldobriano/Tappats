@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/logo_background"
+  >
+  
+  		<ImageView
+		android:layout_width="136px"
+		android:layout_height="38px"
+		android:layout_centerInParent="true"
+		android:background="@drawable/tappats_logo"
+		>
+		</ImageView>
+	<ProgressBar android:id="@+id/pb"
+        android:layout_width="40px" 
+        android:layout_height="40px"
+        android:indeterminate="true" 
+        android:indeterminateOnly="true"
+        android:isScrollContainer="true" 
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10px"
+		android:layout_marginRight="18px"
+        android:soundEffectsEnabled="false"
+        />
+        
+</RelativeLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF"
+    >
+    
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/logobar"
+		>
+	</LinearLayout>
+    
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="44px"
+		android:background="@drawable/pagetitlebg"
+		>
+	
+		<TextView
+		    android:id="@+id/pagetitle" 
+		    android:text="Nearby stops"
+			android:layout_width="wrap_content" 
+			android:layout_height="fill_parent"
+			android:layout_marginLeft="18px"
+			android:gravity="center_vertical"
+			android:textSize="20px"
+			android:textStyle="normal"
+			android:textColor="#ffffff"    
+		    />
+	
+	</LinearLayout>
+    
+	<ListView android:id="@+id/bus_stop_list" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content">
+	</ListView>
+	<LinearLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:orientation="vertical"
+	  android:layout_width="fill_parent"
+	  android:layout_height="80px"
+	  android:background="@drawable/navbarbg"
+	  >
+	
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="18px"
+			android:layout_marginTop="4px"
+			>
+			
+			    <Button 
+				    android:id="@+id/navbar_home" 
+				    android:text="Home"
+				    android:paddingTop="44px"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/navbar_home"
+				    android:textSize="12px"
+					android:textStyle="bold"
+					android:textColor="#cccccc" 
+			    	>
+			    </Button>
+			    
+			    <Button 
+				    android:id="@+id/navbar_current" 
+				    android:text="Current"
+				    android:paddingTop="44px"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/navbar_current"
+				    android:textSize="12px"
+					android:textStyle="bold"
+					android:textColor="#cccccc" 
+			    	>
+			    </Button>
+			
+			    <Button 
+				    android:id="@+id/navbar_favorites" 
+				    android:text="Favorites"
+				    android:paddingTop="44px"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/navbar_favorite"
+				    android:textSize="12px"
+					android:textStyle="bold"
+					android:textColor="#cccccc" 
+			    	>
+			    </Button>
+			    
+			        <Button 
+				    android:id="@+id/navbar_settings" 
+				    android:text="Settings"
+				    android:paddingTop="44px"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/navbar_settings"
+				    android:textSize="12px"
+					android:textStyle="bold"
+					android:textColor="#cccccc" 
+			    	>
+			    </Button>    
+	
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
