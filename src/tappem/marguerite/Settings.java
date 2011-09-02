@@ -137,7 +137,31 @@ public class Settings extends Activity implements DownloadThreadListener, OnClic
 
 		}
 	}
-	
+	public void displayText(String text)
+	{
+		
+		
+		int duration = Toast.LENGTH_SHORT;
+
+		Toast toast = Toast.makeText(this, text, duration);
+		toast.setGravity(Gravity.CENTER, 0, 0);
+		toast.show();
+	}
+	public void handleUpdateUI(final String text)
+	{
+		handler.post(new Runnable() {
+			
+			@Override
+			public void run() {
+				
+				displayText(text);
+
+
+
+			}
+		});
+		
+	}
 	// note! this might be called from another thread
 	@Override
 	public void handleDownloadThreadUpdate(final DownloadTask dt) {

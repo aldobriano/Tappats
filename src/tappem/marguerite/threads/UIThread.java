@@ -1,5 +1,8 @@
 package tappem.marguerite.threads;
 
+
+
+
 import tappem.marguerite.SystemTools;
 import android.content.Context;
 import android.os.Handler;
@@ -9,22 +12,22 @@ import android.view.Gravity;
 import android.widget.Toast;
 
 
-public final class DownloadThread extends Thread {
+public class UIThread extends Thread{	
 
-	private static final String TAG = DownloadThread.class.getSimpleName();
-	
+	private static final String TAG = UIThread.class.getSimpleName();
+
 	private Handler handler;
-	
+
 	private int totalQueued;
-	
+
 	private int totalCompleted;
-	
-	private DownloadThreadListener listener;
-	
-	public DownloadThread(DownloadThreadListener listener) {
+
+	private UIThreadListener listener;
+
+	public UIThread(UIThreadListener listener) {
 		this.listener = listener;
 	}
-	
+
 	@Override
 	public void run() {
 		try {
@@ -32,65 +35,50 @@ public final class DownloadThread extends Thread {
 			// the current thread is being detected implicitly
 			Looper.prepare();
 
-			Log.i(TAG, "DownloadThread entering the loop");
+			Log.i(TAG, "UIThread entering the loop");
 
 			// now, the handler will automatically bind to the
 			// Looper that is attached to the current thread
 			// You don't need to specify the Looper explicitly
 			handler = new Handler();
-			
+
 			// After the following line the thread will start
 			// running the message loop and will not normally
 			// exit the loop unless a problem happens or you
 			// quit() the looper (see below)
 			Looper.loop();
-			
-			Log.i(TAG, "DownloadThread exiting gracefully");
+
+			Log.i(TAG, "UIThread exiting gracefully");
 		} catch (Throwable t) {
-			Log.e(TAG, "DownloadThread halted due to an error", t);
+			Log.e(TAG, "UIThread halted due to an error", t);
 		} 
 	}
-	
+
 	// This method is allowed to be called from any thread
 	public synchronized void requestStop() {
 		// using the handler, post a Runnable that will quit()
-		// the Looper attached to our DownloadThread
+		// the Looper attached to our UIThread
 		// obviously, all previously queued tasks will be executed
 		// before the loop gets the quit Runnable
 		handler.post(new Runnable() {
 			@Override
 			public void run() {
-				// This is guaranteed to run on the DownloadThread
+				// This is guaranteed to run on the UIThread
 				// so we can use myLooper() to get its looper
-				Log.i(TAG, "DownloadThread loop quitting by request");
-				
+				Log.i(TAG, "UIThread loop quitting by request");
+
 				Looper.myLooper().quit();
 			}
 		});
 	}
-	public synchronized void updateUI(final String text, Context context) {
-		// Wrap DownloadTask into another Runnable to track the statistics
-		
-		
-		handler.post(new Runnable() {
-			@Override
-			public void run() {
-				
-					// tell the listener something has happened
-					listener.handleUpdateUI(text);
-							
-			}
-		});
-		
-	
-	}
-	public synchronized void enqueueDownload(final DownloadTask task, Context context) {
-		// Wrap DownloadTask into another Runnable to track the statistics
-		
+
+	public synchronized void enqueueUI(final UITask task, Context context) {
+		// Wrap UITask into another Runnable to track the statistics
+
 		if(!SystemTools.checkInternet(context))
 		{
 			String text = "Please verify that you have Internet Connection";
-			
+
 			int duration = Toast.LENGTH_LONG;
 
 			Toast toast = Toast.makeText(context, text, duration);
@@ -105,37 +93,38 @@ public final class DownloadThread extends Thread {
 					task.run();
 				} finally {					
 					// register task completion
-					synchronized (DownloadThread.this) {
+					synchronized (UIThread.this) {
 						totalCompleted++;
-						
-						
+
+
 					}
 					// tell the listener something has happened
 					signalUpdate(task);
 				}				
 			}
 		});
-		
+
 		totalQueued++;
 		// tell the listeners the queue is now longer
 		//signalUpdate();
 	}
-	
+
 	public synchronized int getTotalQueued() {
 		return totalQueued;
 	}
-	
+
 	public synchronized int getTotalCompleted() {
 		return totalCompleted;
 	}
-	
+
 	// Please note! This method will normally be called from the download thread.
 	// Thus, it is up for the listener to deal with that (in case it is a UI component,
 	// it has to execute the signal handling code in the UI thread using Handler - see
-	// DownloadQueueActivity for example).
-	private void signalUpdate(DownloadTask dt) {
+	// UIQueueActivity for example).
+	private void signalUpdate(UITask dt) {
 		if (listener != null) {
-			listener.handleDownloadThreadUpdate(dt);
+			listener.handleUIThreadUpdate(dt);
 		}
 	}
+
 }

@@ -79,6 +79,10 @@ public class NextBus extends Activity implements DownloadThreadListener, OnClick
 	private DownloadThread downloadThread;
 	
 	private Handler handler;
+	
+	private int updateListCounter = 0;
+	
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -307,18 +311,9 @@ if(hasNFC)
 
 			//populate the webview with map
 
-
-
-
 			showMap();
 
-
-
 			dbHelper = new FavoritesDbAdapter(this);
-
-
-
-
 
 			dbHelper.open();
 			Cursor cursor_favorite = dbHelper.fetchFavorites(currentBusStop.getStopId());
@@ -364,14 +359,26 @@ if(hasNFC)
 			}  
 		}
 	}
+	
+	
 	protected void updateList(BusStop b)
 	{
+		
+		
+		if(b != null)
+		{
 		currentBusStop = b;
 		TextView stopName = (TextView) findViewById(R.id.stopname);
 		stopName.setText(currentBusStop.getStopLabel());
 		// Get all of the rows from the database and create the item list
 		ListView l1 = (ListView) findViewById(R.id.buses);
 		l1.setAdapter(new LinesEfficientAdapter(this, currentBusStop, R.layout.buses));
+		
+		}else
+		{
+			//downloadThread.enqueueDownload(new NextBusServerTask(currentBusStop.getStopId(),uniqueId,"test"), this);  TODO
+			
+		}
 	}
 	protected void onSaveInstanceState(Bundle savedInstanceState)
 	{
@@ -420,6 +427,7 @@ if(hasNFC)
     }
 	protected void onResume()
 	{
+		updateListCounter = 0;
 		if(hasNFC)
 		mAdapter.enableForegroundDispatch(this, mPendingIntent, null, null);
 		super.onResume();
@@ -452,7 +460,31 @@ if(hasNFC)
 
 
 
+	public void displayText(String text)
+	{
+		
+		
+		int duration = Toast.LENGTH_SHORT;
 
+		Toast toast = Toast.makeText(this, text, duration);
+		toast.setGravity(Gravity.CENTER, 0, 0);
+		toast.show();
+	}
+	public void handleUpdateUI(final String text)
+	{
+		handler.post(new Runnable() {
+			
+			@Override
+			public void run() {
+				
+				displayText(text);
+
+
+
+			}
+		});
+		
+	}
 	// note! this might be called from another thread
 	@Override
 	public void handleDownloadThreadUpdate(final DownloadTask dt) {
@@ -469,6 +501,7 @@ if(hasNFC)
 				if(dt instanceof NextBusServerTask)
 				{
 					setProgressBarVisible(false);
+					
 					updateList((BusStop) dt.getResult());
 					
 				}else if(dt instanceof NfcTagServerTask)

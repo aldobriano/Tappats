@@ -285,6 +285,12 @@ public class BusTagRead extends Activity implements DownloadThreadListener{
 			}
 		});
 	}
+
+	@Override
+	public void handleUpdateUI(String text) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
 class TagThread implements Runnable {

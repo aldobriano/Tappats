@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
+
 import tappem.marguerite.BusLine;
 import tappem.marguerite.BusStop;
 import tappem.marguerite.MargueriteTransportation;
@@ -19,16 +20,20 @@ import tappem.marguerite.server.NfcTagServerTask;
 import tappem.marguerite.threads.DownloadTask;
 import tappem.marguerite.threads.DownloadThread;
 import tappem.marguerite.threads.DownloadThreadListener;
+import tappem.nfc.NdefMessageParser;
+import tappem.nfc.ParsedNdefRecord;
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.location.Location;
 import android.net.Uri;
+import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Parcelable;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -39,6 +44,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -49,6 +55,7 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -133,17 +140,31 @@ private Context context;
 			public void gotLocation(final Location location){
 				//Got the location!
 				currentLocation = location;
+				
+				if(currentLocation != null){
 				if(state == 1){
 					downloadThread.enqueueDownload(new NearbyStopsServerTask(location.getLatitude(), location.getLongitude()), context);
 				}else
 				{
 				}
+				}else
+				{
+					String text = "Your current GPS location couldn't be found.  Please verify your GPS is turned on and try again. \n" +
+							"If you know the desired stop name, use the search button to search for the stop.";
+					
+					
+					
+					downloadThread.updateUI(text, context);
+					setProgressBarVisible(true);
+					
+				}
+				
 			}
 
 		};
 
 		myLocation.getLocation(this, locationResult);
-
+		showStatusTextInList("...acquiring your gps location...");
 
 
 
@@ -167,12 +188,47 @@ private Context context;
 		mPendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
 		}
 	}
+	
+	
 	@Override
 	public void onNewIntent(Intent intent) {
 		setIntent(intent);
 		if(hasNFC){
 		resolveNFCIntent(intent);
 		}
+	}
+	
+	public boolean handleNdef(NdefMessage[] ndefMessages) {
+		
+			
+		NdefMessage tappemUrl = ndefMessages[0];
+		Log.d("LIGHTPAD", "NFC TAG handling");
+		//NdefRecord[] caca = bluetoothTag.getRecords();
+		ArrayList<ParsedNdefRecord> pnd = (ArrayList<ParsedNdefRecord>) NdefMessageParser.parse(tappemUrl);
+		for(ParsedNdefRecord record: pnd){
+			try{
+			Uri testing = ((UriRecord) record).getUri();
+			
+		//	Log.d("LIGHTPAD", "NFC TAG:" + testing.getAuthority());
+			
+		String query = testing.getEncodedQuery();
+		String path = testing.getPath();
+		String authority = testing.getAuthority();
+		String host = testing.getHost();
+		Log.d("TAPPEM_DEBUG", "Host: " + host);
+		Log.d("TAPPEM_DEBUG", "Authority: " + authority);
+		Log.d("TAPPEM_DEBUG", "Path: " + path);
+		Log.d("TAPPEM_DEBUG", "Query: " + query);
+			}catch(Exception e)
+			{
+				
+			}
+		}
+
+		
+		return true;
+		
+	//	return false;
 	}
 	
 	private void resolveNFCIntent(Intent intent)
@@ -185,6 +241,20 @@ private Context context;
 			Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 			
 			String tagId = BusTagRead.asHex(tagFromIntent.getId());
+			
+			
+			Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+            NdefMessage[] msgs;
+            if (rawMsgs != null) {
+                msgs = new NdefMessage[rawMsgs.length];
+                for (int i = 0; i < rawMsgs.length; i++) {
+                    msgs[i] = (NdefMessage) rawMsgs[i];
+                }
+                boolean ndefDecoded = handleNdef(msgs);
+            }
+			
+			
+			
 			
 			setProgressBarVisible(true);
 	        try {
@@ -227,6 +297,25 @@ private Context context;
 		updateList(null);
 
 	}
+	
+	
+	protected void showStatusTextInList(String statusText)
+	{
+		
+			String[] names = new String[] { "Linux", statusText, "Eclipse", "Suse",
+					"Ubuntu"};
+			// Create an ArrayAdapter, that will actually make the Strings above
+			// appear in the ListView
+			ListView l1 = (ListView) findViewById(R.id.bus_stop_list);
+			l1.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+			l1.setClickable(false);
+			l1.setOnItemClickListener(this);
+			
+			l1.setAdapter(new ArrayAdapter<String>(this,
+					R.layout.status_text_list, names));
+			
+			
+	}
 	protected void updateList(ArrayList<BusStop> b)
 	{
 		stops = b;
@@ -239,7 +328,32 @@ private Context context;
 		l1.setOnItemClickListener(this);
 		l1.setAdapter(new StopsEfficientAdapter(this, stops, R.layout.nearby_stop_list));
 	}
+	
+	public void displayText(String text)
+	{
+		
+		
+		int duration = Toast.LENGTH_SHORT;
 
+		Toast toast = Toast.makeText(this, text, duration);
+		toast.setGravity(Gravity.CENTER, 0, 0);
+		toast.show();
+	}
+	public void handleUpdateUI(final String text)
+	{
+		handler.post(new Runnable() {
+			
+			@Override
+			public void run() {
+				
+				displayText(text);
+
+
+
+			}
+		});
+		
+	}
 	// note! this might be called from another thread
 	@Override
 	public void handleDownloadThreadUpdate(final DownloadTask dt) {
@@ -396,7 +510,8 @@ private Context context;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} catch (Exception e)
+		{}
 	}
 
 
