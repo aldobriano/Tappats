@@ -4,25 +4,71 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="@drawable/logo_background"
+  android:gravity="top"
   >
   
   		<ImageView
-		android:layout_width="136px"
-		android:layout_height="38px"
-		android:layout_centerInParent="true"
-		android:background="@drawable/tappats_logo"
+		android:id="@+id/speech_bg"
+		android:layout_width="310px"
+		android:layout_height="174px"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="60px"
+		android:background="@drawable/intro_speech"
 		>
 		</ImageView>
-	<ProgressBar android:id="@+id/pb"
-        android:layout_width="40px" 
-        android:layout_height="40px"
-        android:indeterminate="true" 
-        android:indeterminateOnly="true"
-        android:isScrollContainer="true" 
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="10px"
-		android:layout_marginRight="18px"
-        android:soundEffectsEnabled="false"
-        />
+		
+		<TextView
+		android:id="@+id/speech_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:maxWidth="280px"
+		android:layout_alignLeft="@+id/speech_bg"
+		android:layout_marginLeft="20px"
+		android:layout_marginTop="80px"
+		android:text="To Use NFC:"
+		android:textSize="20px"
+		android:textStyle="bold"
+		android:textColor="#333333"
+		>
+		</TextView>
+		
+		<TextView
+		android:id="@+id/speech_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:maxWidth="280px"
+		android:layout_alignLeft="@+id/speech_bg"
+		android:layout_marginLeft="20px"
+		android:layout_marginTop="5px"
+		android:layout_below="@+id/speech_title"
+		android:text="Place your phone against the TapPATS badge at the bus stop to see when the next buses are arriving."
+		android:textSize="20px"
+		android:textStyle="normal"
+		android:textColor="#333333"
+		>
+		</TextView>
+		
+		<ImageView
+		android:id="@+id/hand"
+		android:layout_width="353px"
+		android:layout_height="498px"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:background="@drawable/intro_hand"
+		>
+		</ImageView>
+		
+
+        
+		<ImageView
+		android:id="@+id/logo"
+		android:layout_width="130px"
+		android:layout_height="36px"
+		android:background="@drawable/logo_130px"
+		android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30px"
+		>
+		</ImageView>
         
 </RelativeLayout>
