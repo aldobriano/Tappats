@@ -33,51 +33,75 @@
 		
 	</RelativeLayout>	
     
-	<RelativeLayout
+	<TextView
 		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:id="@+id/home_title_bar"
+		android:id="@+id/SettingsTitle"
 		android:layout_width="match_parent"
 		android:layout_height="44px"
 		android:layout_below="@+id/logobar"
-		android:background="@drawable/greybg_dark"
-		>
+		android:paddingLeft="18px"
+		android:background="#666666"
+		android:gravity="center_vertical"
+		android:textSize="24px"
+		android:textStyle="bold"
+		android:textColor="#ffffff"
+		android:text="Settings"
+		/>
 	
 		<TextView
-		    android:id="@+id/SettingsTitle" 
-		    android:text="Settings"
-			android:layout_width="wrap_content" 
-			android:layout_height="fill_parent"
-			android:layout_marginLeft="18px"
-			android:gravity="center_vertical"
-			android:textSize="24px"
-			android:textStyle="bold"
-			android:textColor="#ffffff"    
-		    />
-	</RelativeLayout>
-	
-	<RelativeLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:id="@+id/VersionTitleHolder"
-		android:layout_width="match_parent"
-		android:layout_height="44px"
-		android:layout_below="@+id/home_title_bar"
-		android:background="@drawable/greybg_light"
-		>
-	
-		<TextView
-		    android:id="@+id/VersionTitle" 
-		    android:text="Version"
-			android:layout_width="wrap_content" 
-			android:layout_height="fill_parent"
-			android:layout_marginLeft="18px"
+		    android:id="@+id/NFCTitle" 
+		    android:text="How to Use NFC"
+		    android:layout_height="44px"
+			android:layout_below="@+id/SettingsTitle"
+			android:background="#cccccc"
+			android:layout_width="match_parent" 
+			android:paddingLeft="18px"
 			android:gravity="center_vertical"
 			android:textSize="24px"
 			android:textStyle="bold"
 			android:textColor="#000000"    
 		    />			
-	</RelativeLayout>
-    		
-    <TextView
+
+    	<Button
+		    android:id="@+id/NFCInfo" 
+		    android:text="See an introduction on how to use NFC."
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+			android:minHeight="88px"
+			android:paddingRight="18px"
+			android:paddingLeft="18px"
+			android:layout_below="@+id/NFCTitle"
+			android:gravity="center_vertical"
+			android:textSize="24px"
+			android:textStyle="normal"
+			android:textColor="#000000"
+			android:background="@drawable/list_item_background"    
+		  	/>
+		  	
+		<ImageView 
+			android:id="@+id/listbottomline" 
+			android:layout_width="fill_parent"
+			android:layout_height="1px"
+			android:background="#999999"
+			android:layout_below="@+id/NFCInfo"
+			>
+			</ImageView> 
+
+		<TextView
+		    android:id="@+id/VersionTitle" 
+		    android:text="Version"
+		    android:layout_height="44px"
+			android:layout_below="@+id/listbottomline"
+			android:background="#cccccc"
+			android:layout_width="match_parent" 
+			android:paddingLeft="18px"
+			android:gravity="center_vertical"
+			android:textSize="24px"
+			android:textStyle="bold"
+			android:textColor="#000000"    
+		    />			
+
+    	<TextView
 		    android:id="@+id/VersionNumber" 
 		    android:text="Version 0.1"
 			android:layout_width="fill_parent" 
@@ -85,43 +109,37 @@
 			android:minHeight="88px"
 			android:paddingLeft="18px"
 			android:paddingRight="18px"
-			android:layout_below="@+id/VersionTitleHolder"
+			android:layout_below="@+id/VersionTitle"
 			android:gravity="center_vertical"
 			android:textSize="24px"
 			android:textStyle="normal"
 			android:textColor="#000000"
 			android:background="#f0f0f0"    
 		  	/>
-	<ImageView 
-		android:id="@+id/listbottomline" 
-		android:layout_width="fill_parent"
-		android:layout_height="1px"
-		android:background="#999999"
-		android:layout_below="@+id/VersionNumber"
-		>
-		</ImageView> 
+		  	
+		<ImageView 
+			android:id="@+id/listbottomline2" 
+			android:layout_width="fill_parent"
+			android:layout_height="1px"
+			android:background="#999999"
+			android:layout_below="@+id/VersionNumber"
+			>
+			</ImageView>
 
-	<RelativeLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:id="@+id/InformationTitleHolder"
-		android:layout_width="match_parent"
-		android:layout_height="44px"
-		android:layout_below="@+id/listbottomline"
-		android:background="@drawable/greybg_light"
-		>
-	
+
 		<TextView
-		    android:id="@+id/InformationTitle" 
+		    android:id="@+id/InfoTitle" 
 		    android:text="Information"
-			android:layout_width="wrap_content" 
-			android:layout_height="fill_parent"
-			android:layout_marginLeft="18px"
+		    android:layout_height="44px"
+			android:layout_below="@+id/listbottomline2"
+			android:background="#cccccc"
+			android:layout_width="match_parent" 
+			android:paddingLeft="18px"
 			android:gravity="center_vertical"
 			android:textSize="24px"
 			android:textStyle="bold"
 			android:textColor="#000000"    
-		    />			
-	</RelativeLayout>
+		    />
     		
     <Button
 		    android:id="@+id/urlTappem" 
@@ -129,10 +147,9 @@
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content"
 			android:minHeight="88px"
-
 			android:paddingRight="18px"
 			android:paddingLeft="18px"
-			android:layout_below="@+id/InformationTitleHolder"
+			android:layout_below="@+id/InfoTitle"
 			android:gravity="center_vertical"
 			android:textSize="24px"
 			android:textStyle="normal"
@@ -141,35 +158,13 @@
 		  	/>
 		  	
 	<ImageView 
-		android:id="@+id/listbottomline2" 
+		android:id="@+id/listbottomline3" 
 		android:layout_width="fill_parent"
 		android:layout_height="1px"
 		android:background="#999999"
 		android:layout_below="@+id/urlTappem"
 		>
-		</ImageView> 
-
-<!-- 	<RelativeLayout -->
-<!-- 		xmlns:android="http://schemas.android.com/apk/res/android" -->
-<!-- 		android:id="@+id/FeedbackTitleHolder" -->
-<!-- 		android:layout_width="match_parent" -->
-<!-- 		android:layout_height="44px" -->
-<!-- 		android:layout_below="@+id/listbottomline2" -->
-<!-- 		android:background="@drawable/greybg_light" -->
-<!-- 		> -->
-	
-<!-- 		<TextView -->
-<!-- 		    android:id="@+id/FeedbackTitle"  -->
-<!-- 		    android:text="Feedback" -->
-<!-- 			android:layout_width="wrap_content"  -->
-<!-- 			android:layout_height="fill_parent" -->
-<!-- 			android:layout_marginLeft="18px" -->
-<!-- 			android:gravity="center_vertical" -->
-<!-- 			android:textSize="24px" -->
-<!-- 			android:textStyle="bold" -->
-<!-- 			android:textColor="#000000"     -->
-<!-- 		    />			 -->
-<!-- 	</RelativeLayout> -->
+		</ImageView>
 
 	<ProgressBar android:id="@+id/pb"
         android:layout_width="40px" 

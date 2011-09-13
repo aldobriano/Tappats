@@ -124,13 +124,13 @@ public final class R {
         public static final int y_small=0x7f020068;
     }
     public static final class id {
-        public static final int InformationTitle=0x7f0a005a;
-        public static final int InformationTitleHolder=0x7f0a0059;
+        public static final int InfoTitle=0x7f0a005b;
+        public static final int NFCInfo=0x7f0a0057;
+        public static final int NFCTitle=0x7f0a0056;
         public static final int SettingsTitle=0x7f0a0055;
         public static final int TextView01=0x7f0a001c;
-        public static final int VersionNumber=0x7f0a0058;
-        public static final int VersionTitle=0x7f0a0057;
-        public static final int VersionTitleHolder=0x7f0a0056;
+        public static final int VersionNumber=0x7f0a0059;
+        public static final int VersionTitle=0x7f0a0058;
         public static final int aboutnfc_btn=0x7f0a003e;
         public static final int back_btn=0x7f0a0026;
         public static final int busLineImage=0x7f0a000b;
@@ -146,7 +146,7 @@ public final class R {
         public static final int columnInfoText=0x7f0a003b;
         public static final int current_header=0x7f0a000f;
         public static final int current_title_bar=0x7f0a0044;
-        public static final int definition=0x7f0a005e;
+        public static final int definition=0x7f0a005f;
         public static final int direction=0x7f0a0046;
         public static final int emptyImage=0x7f0a0042;
         public static final int f_stopline1=0x7f0a0004;
@@ -178,7 +178,8 @@ public final class R {
         public static final int list=0x7f0a002e;
         public static final int listStatusText=0x7f0a0043;
         public static final int listbottomline=0x7f0a0035;
-        public static final int listbottomline2=0x7f0a005c;
+        public static final int listbottomline2=0x7f0a005a;
+        public static final int listbottomline3=0x7f0a005d;
         public static final int logo=0x7f0a002c;
         public static final int logobar=0x7f0a000e;
         public static final int logobar_blackline=0x7f0a0049;
@@ -197,11 +198,11 @@ public final class R {
         public static final int nfc_header=0x7f0a0050;
         public static final int nfc_message=0x7f0a0051;
         public static final int nfc_text=0x7f0a0052;
-        public static final int pagetitle=0x7f0a005d;
+        public static final int pagetitle=0x7f0a005e;
         public static final int pb=0x7f0a0048;
         public static final int refresh=0x7f0a0023;
         public static final int refreshholder=0x7f0a0013;
-        public static final int search=0x7f0a005f;
+        public static final int search=0x7f0a0060;
         public static final int seefavorites=0x7f0a0036;
         public static final int speech_bg=0x7f0a0028;
         public static final int speech_text=0x7f0a002a;
@@ -217,7 +218,7 @@ public final class R {
         public static final int stopname=0x7f0a0011;
         public static final int text=0x7f0a002d;
         public static final int title_progress_bar=0x7f0a002f;
-        public static final int urlTappem=0x7f0a005b;
+        public static final int urlTappem=0x7f0a005c;
         public static final int versionText=0x7f0a0041;
         public static final int word=0x7f0a003d;
     }
