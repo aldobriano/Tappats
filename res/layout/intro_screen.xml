@@ -12,7 +12,7 @@
 		android:layout_width="310px"
 		android:layout_height="174px"
 		android:layout_centerHorizontal="true"
-		android:layout_marginTop="60px"
+		android:layout_marginTop="80px"
 		android:background="@drawable/intro_speech"
 		>
 		</ImageView>
@@ -24,7 +24,7 @@
 		android:maxWidth="280px"
 		android:layout_alignLeft="@+id/speech_bg"
 		android:layout_marginLeft="20px"
-		android:layout_marginTop="80px"
+		android:layout_marginTop="95px"
 		android:text="To Use NFC:"
 		android:textSize="20px"
 		android:textStyle="bold"
